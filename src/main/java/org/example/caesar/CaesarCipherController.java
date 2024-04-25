@@ -121,6 +121,9 @@ public class CaesarCipherController {
                 int newIndex;
                 if (!additionalKeyField.getText().isEmpty()) {
                     newIndex = (index + key) % permutedAlphabet.length();
+                    if (newIndex < 0) {
+                        newIndex += permutedAlphabet.length();
+                    }
                 } else {
                     newIndex = (index + key + permutedAlphabet.length()) % permutedAlphabet.length();
                 }
